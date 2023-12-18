@@ -1,0 +1,33 @@
+{% extends 'first/layout.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class=" text-center">
+        <h1>{{ title }}</h1>
+        <h2></h2>
+
+    </div>
+
+{#    <h1>Создать университет</h1>#}
+    <div class="container mt-3">
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}<br>
+        <button type="submit" class="btn btn-success">Сохранить</button>
+    </form><br>
+    </div>
+
+    <script>
+    $(function() {
+    $('input[name="creation_date"]').datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        orientation: 'bottom'
+    });
+    });
+    </script>
+{% endblock %}

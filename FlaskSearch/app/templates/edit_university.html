@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<div class=" text-center">
+    <h1>{{ title }}</h1>
+    <h2></h2>
+
+</div>
+
+<h1>Редактировать университет</h1>
+
+
+<div class="container mt-3">
+
+    <form method="post">
+        <label for="full_name">Полное название:</label>
+        <input type="text" id="full_name" name="full_name" value="{{ university.full_name }}">
+        <br>
+        <label for="short_name">Сокращенное название:</label>
+        <input type="text" id="short_name" name="short_name" value="{{ university.short_name }}">
+        <br>
+
+        <label for="creation_date">Дата создания (гггг.мм.дд):</label>
+        <input type="date" id="creation_date" name="creation_date" value="{{ university.creation_date }}">
+        <br><br>
+
+        <p>{{error}} </p>
+        <button type="submit" class="btn btn-success">Сохранить</button>
+    </form>
+    <br>
+</div>
+
+<script>
+    $(function () {
+        $('input[name="creation_date"]').datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            orientation: 'bottom'
+        });
+    });
+</script>
+{% endblock %}

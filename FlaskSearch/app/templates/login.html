@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<div class=" text-center">
+    <h1>Вход</h1>
+</div>
+
+<div class="container mt-3">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="username">Логин:</label>
+        {{ form.username(class="form-control") }}
+        <br>
+        <label for="password">Пароль:</label>
+        {{ form.password(class="form-control") }}
+        <br>
+        {{ form.submit(class="btn btn-primary", label="Войти") }}
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<div class=" text-center">
+    <h1>{{ title }}</h1>
+</div>
+
+<div class="container mt-3" >
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="full_name" >ФИО:</label>
+        {{ form.full_name( class="form-control") }}
+        <br>
+        <label for="university">Университет:</label>
+        {{ form.university(class="form-control") }}
+        <br>
+        <label for="birth_date">Дата рождения:</label>
+        {{ form.birth_date(class="form-control") }}
+        <br>
+        <label for="enrollment_year">Год выпуска:</label>
+        {{ form.enrollment_year(class="form-control") }}
+        <br>
+
+        <button type="submit" class="btn btn-success">Сохранить</button>
+    </form>
+</div>
+{% endblock %}
